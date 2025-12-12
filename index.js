@@ -28,6 +28,19 @@ app.get("/download", (req, res) => {
   return res.redirect(WEBSITE_URL);
 });
 
+app.post("/validate", (req, res) => {
+
+  console.log("📩 Request Received!");
+  console.log(req.body); // log the body sent by EA
+
+  // Always respond success for testing
+  return res.json({
+    success: true,
+    message: "Request received successfully"
+  });
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
